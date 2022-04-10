@@ -1,0 +1,42 @@
+
+
+.addHeader{
+    background-color: rgb(240, 208, 32);
+    padding: 5px 35px;
+    color: rgb(187, 70, 187);
+    margin-right: 5px;
+    margin-left: 5px;
+    
+
+}
+.email{
+    padding: 5px 85px;
+    
+}
+.itemHeader{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* .allItems{
+} */
+.userAdded{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.emailUser{
+    float: left;
+    /* margin-left: 30px; */
+    margin-left: -25px;
+}
+
+.ageUser{
+    margin-right: 45px;
+    
+}
+.nameUser{
+    margin-left: 10px;
+}

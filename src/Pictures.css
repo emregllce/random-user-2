@@ -1,0 +1,15 @@
+.icon{
+    width: 30px;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+.icon:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.icons{
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+}

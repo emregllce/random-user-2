@@ -1,0 +1,27 @@
+
+body {
+  height: 100%;
+  background: linear-gradient(rgb(228, 224, 225) 200px, rgb(248, 228, 116) 100px);
+}
+
+.container{
+  height: 100vh;  
+ }
+
+ button{
+  display: block;
+  width: 7rem;
+  height: 2rem;
+  background-color: rgb(187, 70, 187);
+  margin: auto;
+}
+.iconcw{
+  width: 75px;
+  height: auto;
+  margin: auto;
+}
+.cway{
+  width: fit-content;
+  margin: auto;
+  margin-top: 3rem;
+}
