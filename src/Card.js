@@ -6,12 +6,11 @@ import axios from "axios";
 import AddUser from './AddUser';
 
 //{ info,fetchCard, loading,whatApp,detailApp }
-function Card() {  
+function Card() {
   const myUrl = "https://randomuser.me/api/"
   const [info, setInfo] = useState([])
-  const [addUsers, setAddUsers] = useState([]);
-    const [what, setWhat] = useState()
-    const [detail, setDetail] = useState();
+  const [what, setWhat] = useState()
+  const [detail, setDetail] = useState();
   const [loading, setLoading] = useState(true)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("")
@@ -20,12 +19,13 @@ function Card() {
    const [phone, setPhone] = useState("")
    const [password, setPassword] = useState("")
    const [picture, setPicture] = useState("")
-    
- const handleClick = async() => {
-    setLoading(false) 
-    await axios.get(myUrl)
+   const [addUsers, setAddUsers] = useState([]);
+   
+   const handleClick = () => {
+       setLoading(false)
+       axios.get(myUrl)
     .then((res)=>{
-    console.log(res);
+    // console.log(res);
     setInfo(res?.data?.results)
     setWhat("name")
     setDetail(res?.data?.results[0]?.name.first +"  "+ res?.data?.results[0]?.name.last)
@@ -36,11 +36,11 @@ function Card() {
     setPhone(res?.data?.results[0]?.phone)
     setPassword(res?.data?.results[0]?.login.password)
     setPicture(res?.data?.results[0]?.picture.large)
-    setLoading(true) 
+    setLoading(true)
     }
     )}
 
-    
+
     
     const handleaddUsers = () => {
         const newUser = {
@@ -49,21 +49,22 @@ function Card() {
             age:info[0]?.dob.age,
             phone:info[0]?.phone,
         }
-        
+
         if (addUsers.length ===0) {
             setAddUsers([...addUsers, newUser]);
         }
         else if (addUsers.length > 0) {
-            addUsers[addUsers.length-1].email !== newUser.email  && 
+            addUsers[addUsers.length-1].email !== newUser.email  &&
             setAddUsers([...addUsers, newUser]);
-
         }
-       
       
         
+        
+        
+
         }
-     
-    
+
+
     useEffect(() => {
         handleClick();
   }, [])
@@ -72,7 +73,7 @@ function Card() {
 
     const handleMove = (e) => {
         if (e.target.id==="man"||e.target.id==="woman") {
-           setWhat("name") 
+           setWhat("name")
            setDetail(name)
         }
         else if (e.target.id==="mail") {
@@ -96,7 +97,7 @@ function Card() {
             setDetail(password)
         }
     }
- 
+
 
 
 // const {dob, email, gender, location, name, phone, picture, registered} = {info[0]}
@@ -108,8 +109,8 @@ function Card() {
             <div>  <h2>{detail}</h2> </div>
             <div onMouseMove={handleMove} className="pictures"> <Pictures info = {info}/> </div>
             <div className="buttons">
-            <button onClick={handleClick}>{loading? "New User" : "Loading"}</button> 
-             <button onClick={handleaddUsers}>Add User</button> 
+            <button onClick={handleClick}>{loading? "New User" : "Loading"}</button>
+             <button onClick={handleaddUsers}>Add User</button>
             </div>
         </div>
         {addUsers.length  > 0 &&

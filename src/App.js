@@ -11,18 +11,6 @@ function App() {
   const [detailApp, setDetailApp] = useState()
   const myUrl = "https://randomuser.me/api/"
 
-  // const fetchCard = async() => {
-  //   setLoading(false) 
-  //   await axios.get(myUrl)
-  //   .then((res)=>setInfo(res.data.results))
-  //   .catch((err)=>console.log(err))
-  //   setWhatApp("name")
-  //   setDetailApp(info[0]?.name.first +" "+ info[0]?.name.last)
-  //   setLoading(true) 
-  //   }
-  //   useEffect(() => {
-  //     fetchCard();
-  // }, [])
 
 
   return (
