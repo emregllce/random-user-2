@@ -50,26 +50,24 @@ function Card() {
             phone:info[0]?.phone,
         }
 
-        if (addUsers.length ===0) {
-            setAddUsers([...addUsers, newUser]);
-        }
-        else if (addUsers.length > 0) {
-            addUsers[addUsers.length-1].email !== newUser.email  &&
-            setAddUsers([...addUsers, newUser]);
-        }
-      
-        
-        
-        
+        const count = addUsers?.filter((user)=>{
+            return  user.email.toLowerCase().includes(newUser.email.toLowerCase())
+        })
 
-        }
+        // if (count.length ===0) {
+        //         setAddUsers([...addUsers, newUser]);
+        //     }
+        // else{
+        //     setAddUsers(addUsers)
+        // }
+        count.length ? setAddUsers(addUsers): setAddUsers([...addUsers, newUser])
+    
+    }
 
 
     useEffect(() => {
         handleClick();
   }, [])
-
-
 
     const handleMove = (e) => {
         if (e.target.id==="man"||e.target.id==="woman") {
